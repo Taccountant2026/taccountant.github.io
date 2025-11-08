@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>About - Retro Replay</title>
+
+  <!-- Google Font & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#07070b] text-white font-[Rubik] relative overflow-hidden">
+
+  <!-- Floating Background Images -->
+  <img src="assets/floating1.png" class="floating-image" style="top:10%; left:5%;">
+  <img src="assets/floating2.png" class="floating-image" style="top:20%; right:8%;">
+  <img src="assets/floating3.png" class="floating-image" style="bottom:15%; left:10%;">
+  <img src="assets/floating4.png" class="floating-image" style="bottom:10%; right:5%;">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-[#34E3FF]/30 bg-black/70 backdrop-blur">
+    <div class="container mx-auto px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/RetroReplay_Logo.png" alt="Retro Replay" class="h-10 w-auto logo-glow">
+        </a>
+        <div class="hidden md:flex gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="about.html" class="nav-link active">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="cart-button"><span class="cart-count bg-pink-500 text-white text-xs px-1 rounded">0</span></a>
+          <button class="mobile-menu-button md:hidden">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex-1 py-16 relative z-10">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#FA5FDE] mb-6 drop-shadow-[0_0_12px_#FA5FDE]">About Retro Replay</h1>
+
+      <!-- About Section -->
+      <div class="space-y-6 text-[#34E3FF] text-lg md:text-xl text-left">
+        <p>
+          Retro Replay specializes in refurbishing classic gaming consoles from PlayStation, Nintendo, Sega, and more. Each console is meticulously restored, fully cleaned, serviced, and tested to deliver authentic retro gaming experiences.
+        </p>
+
+        <h2 class="text-2xl font-bold text-[#FA5FDE] mt-8 mb-2">Our Mission</h2>
+        <p>
+          We bring your favorite childhood gaming memories back to life with professionally refurbished systems that look and play like new. From PlayStation to Nintendo, Sega to retro handhelds - we're dedicated to keeping these incredible consoles alive and performing at their best. Quality refurbishment meets nostalgic gaming excellence.
+        </p>
+
+        <h2 class="text-2xl font-bold text-[#FA5FDE] mt-8 mb-2">Why Choose Us</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong>Expert Refurbishment:</strong> Each console is meticulously cleaned, serviced, and restored to peak performance by experienced technicians.</li>
+          <li><strong>Thoroughly Tested:</strong> Every unit undergoes comprehensive testing to ensure all components work flawlessly before shipping.</li>
+          <li><strong>Passion for Gaming:</strong> We're gamers too! Our love for retro gaming drives us to deliver the best possible experience.</li>
+          <li><strong>Quality Guarantee:</strong> We stand behind our work with quality guarantees and responsive customer support.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-[#FA5FDE] mt-8 mb-2">Our Process</h2>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li><strong>Inspection:</strong> We thoroughly examine each console to identify any issues.</li>
+          <li><strong>Cleaning:</strong> Complete disassembly and deep cleaning of all components.</li>
+          <li><strong>Repair:</strong> Replace worn parts and fix any mechanical or electrical issues.</li>
+          <li><strong>Testing:</strong> Extensive testing across multiple games and features.</li>
+          <li><strong>Quality Check:</strong> Final inspection and quality verification before shipping.</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#34E3FF]/30 bg-black/80 py-6 text-center text-white text-sm">
+    © 2025 Retro Replay – Refurbished Retro Gaming Consoles
+  </footer>
+
+  <script src="navigation.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

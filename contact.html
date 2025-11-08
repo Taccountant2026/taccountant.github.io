@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Retro Replay</title>
+
+  <!-- Google Font & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#07070b] text-white font-[Rubik] relative overflow-hidden">
+  
+  <!-- Background Logo -->
+  <img src="assets/RetroReplay_Logo.png" alt="Logo Background" class="page-background-logo">
+
+  <!-- Floating Neon Images -->
+  <img src="assets/floating1.png" class="floating-image" style="top:5%; left:8%; animation: float 6s ease-in-out infinite;">
+  <img src="assets/floating2.png" class="floating-image" style="top:15%; right:10%; animation: float 5s ease-in-out infinite;">
+  <img src="assets/floating3.png" class="floating-image" style="bottom:20%; left:12%; animation: float 7s ease-in-out infinite;">
+  <img src="assets/floating4.png" class="floating-image" style="bottom:10%; right:6%; animation: float 6s ease-in-out infinite;">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-[#34E3FF]/30 bg-black/70 backdrop-blur">
+    <div class="container mx-auto px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/RetroReplay_Logo.png" alt="Retro Replay" class="h-10 w-auto logo-glow">
+        </a>
+        <div class="hidden md:flex gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="cart-button">
+            <span class="cart-count bg-pink-500 text-white text-xs px-1 rounded">0</span>
+          </a>
+          <button class="mobile-menu-button md:hidden">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex-1 flex items-center justify-center py-16 relative z-10">
+    <div class="bg-[#0b0b0f]/80 border border-[#34E3FF]/50 rounded-2xl shadow-[0_0_30px_#34E3FF] p-8 w-full max-w-md relative">
+      
+      <!-- Glowing Title -->
+      <h1 class="text-4xl font-bold text-[#FA5FDE] mb-4 text-center drop-shadow-[0_0_12px_#FA5FDE]">Contact Us</h1>
+      <p class="text-[#34E3FF] text-center mb-8">Questions, orders, or custom console requests? Send us a message!</p>
+
+      <!-- Contact Form -->
+      <form class="space-y-6" id="contact-form">
+        <div class="flex flex-col text-left">
+          <label for="name" class="mb-1 text-[#FA5FDE] font-semibold">Name</label>
+          <input type="text" id="name" name="name" required class="bg-[#07070b]/70 border border-[#34E3FF]/50 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#34E3FF]">
+        </div>
+
+        <div class="flex flex-col text-left">
+          <label for="email" class="mb-1 text-[#FA5FDE] font-semibold">Email</label>
+          <input type="email" id="email" name="email" required class="bg-[#07070b]/70 border border-[#34E3FF]/50 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#34E3FF]">
+        </div>
+
+        <div class="flex flex-col text-left">
+          <label for="phone" class="mb-1 text-[#FA5FDE] font-semibold">Phone</label>
+          <input type="tel" id="phone" name="phone" class="bg-[#07070b]/70 border border-[#34E3FF]/50 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#34E3FF]">
+        </div>
+
+        <div class="flex flex-col text-left">
+          <label for="message" class="mb-1 text-[#FA5FDE] font-semibold">Message</label>
+          <textarea id="message" name="message" rows="5" required class="bg-[#07070b]/70 border border-[#34E3FF]/50 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#34E3FF]"></textarea>
+        </div>
+
+        <button type="submit" class="bg-[#FA5FDE] hover:bg-[#e040d6] text-black font-bold py-3 rounded-lg w-full transition-all drop-shadow-[0_0_8px_#FA5FDE]">Send Message</button>
+      </form>
+
+      <div id="form-success" class="hidden mt-6 p-4 bg-green-500/20 border border-green-500 rounded-lg text-center text-green-400">
+        Thank you! We'll get back to you soon.
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#34E3FF]/30 bg-black/80 py-6 text-center text-white text-sm">
+    © 2025 Retro Replay – Refurbished Retro Gaming Consoles
+  </footer>
+
+  <script src="navigation.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('form-success').classList.remove('hidden');
+    });
+  </script>
+
+  <!-- Floating Animation -->
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</body>
+</html>

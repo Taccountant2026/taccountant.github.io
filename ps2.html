@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlayStation 2 Products - Retro Replay</title>
+
+  <!-- Google Font & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#07070b] text-white font-[Rubik] relative overflow-hidden">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-[#34E3FF]/30 bg-black/70 backdrop-blur">
+    <div class="container mx-auto px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/RetroReplay_Logo.png" alt="RetroReplay" class="h-10 w-auto logo-glow">
+        </a>
+        <div class="hidden md:flex gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link active">Products</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="cart-button"><span class="cart-count bg-pink-500 text-white text-xs px-1 rounded">0</span></a>
+          <button class="mobile-menu-button md:hidden">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 py-12 text-center relative z-10">
+    <!-- Back Button -->
+    <div class="mb-6 text-left max-w-6xl mx-auto px-6">
+      <a href="products.html" class="inline-block text-[#FA5FDE] hover:text-[#FF77FF] font-bold">← Back to All Consoles</a>
+    </div>
+
+    <h1 class="text-4xl font-bold text-[#FA5FDE] mb-3 drop-shadow-[0_0_12px_#FA5FDE]">PlayStation 2 Products</h1>
+    <p class="text-[#34E3FF] mb-8 max-w-2xl mx-auto">
+      Browse our full range of PS2 consoles, bundles, controllers, HDDs, and custom mods.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center gap-4 mb-8 flex-wrap">
+      <button class="filter-btn bg-[#FA5FDE]/30 hover:bg-[#FA5FDE] text-white px-4 py-2 rounded" data-filter="all">All</button>
+      <button class="filter-btn bg-[#34E3FF]/30 hover:bg-[#34E3FF] text-white px-4 py-2 rounded" data-filter="console">Consoles</button>
+      <button class="filter-btn bg-[#FAE34F]/30 hover:bg-[#FAE34F] text-black px-4 py-2 rounded" data-filter="bundle">Bundles</button>
+      <button class="filter-btn bg-[#34FF77]/30 hover:bg-[#34FF77] text-black px-4 py-2 rounded" data-filter="controller">Controllers</button>
+      <button class="filter-btn bg-[#FF5734]/30 hover:bg-[#FF5734] text-white px-4 py-2 rounded" data-filter="hdd">HDDs</button>
+      <button class="filter-btn bg-[#8E44AD]/30 hover:bg-[#8E44AD] text-white px-4 py-2 rounded" data-filter="mod">Custom Mods</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+
+      <!-- Consoles -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30" data-category="console">
+        <img src="assets/ps2-fat.jpg" alt="Refurbished PS2 Fat" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Refurbished PS2 Fat Console</h3>
+        <p class="text-[#34E3FF] mb-2">Cleaned, serviced, thermal paste reapplied, tested 100%.</p>
+        <p class="font-bold">Console Only £60 – £85</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30" data-category="console">
+        <img src="assets/ps2-slim.jpg" alt="Refurbished PS2 Slim" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Refurbished PS2 Slim Console</h3>
+        <p class="text-[#34E3FF] mb-2">Slimline model, serviced and tested, compact design.</p>
+        <p class="font-bold">Console Only £70 – £90</p>
+      </div>
+
+      <!-- Bundles -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#FAE34F]/50" data-category="bundle">
+        <img src="assets/bundle1.jpg" alt="Starter Bundle" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Plug-and-Play Starter Bundle</h3>
+        <p class="text-[#34E3FF] mb-2">Refurbished console, 1 controller, AV/HDMI, FMCB card.</p>
+        <p class="font-bold">£120 – £150</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#FAE34F]/50" data-category="bundle">
+        <img src="assets/bundle2.jpg" alt="Modded Bundle HDD Edition" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Modded Bundle (HDD Edition)</h3>
+        <p class="text-[#34E3FF] mb-2">HDD + OPL with preloaded games menu + FMCB card.</p>
+        <p class="font-bold">£180 – £250</p>
+      </div>
+
+      <!-- Controllers -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34FF77]/50" data-category="controller">
+        <img src="assets/dualshock2.jpg" alt="DualShock 2 Controller" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">DualShock 2 Controller (OEM)</h3>
+        <p class="text-[#34E3FF] mb-2">Official Sony controller, tested and cleaned.</p>
+        <p class="font-bold">£25</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34FF77]/50" data-category="controller">
+        <img src="assets/dualshock2-aftermarket.jpg" alt="Aftermarket Controller" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Aftermarket DualShock 2 Controller</h3>
+        <p class="text-[#34E3FF] mb-2">New third-party controller.</p>
+        <p class="font-bold">£15</p>
+      </div>
+
+      <!-- HDDs -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#FF5734]/50" data-category="hdd">
+        <img src="assets/hdd250.jpg" alt="250GB PS2 HDD" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">250GB PS2 HDD (Preloaded)</h3>
+        <p class="text-[#34E3FF] mb-2">Game-ready HDD preconfigured for OPL.</p>
+        <p class="font-bold">£60</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#FF5734]/50" data-category="hdd">
+        <img src="assets/hdd500.jpg" alt="500GB PS2 HDD" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">500GB PS2 HDD (Preloaded)</h3>
+        <p class="text-[#34E3FF] mb-2">High-capacity HDD with optimised library.</p>
+        <p class="font-bold">£100</p>
+      </div>
+
+      <!-- FMCB Memory Cards -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34FF77]/50" data-category="controller">
+        <img src="assets/fmcb8.jpg" alt="8MB FMCB" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">8MB FMCB Memory Card</h3>
+        <p class="text-[#34E3FF] mb-2">Free McBoot preinstalled with OPL and apps.</p>
+        <p class="font-bold">£15</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34FF77]/50" data-category="controller">
+        <img src="assets/fmcb64.jpg" alt="64MB FMCB" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">64MB FMCB Memory Card</h3>
+        <p class="text-[#34E3FF] mb-2">Extra capacity for saves and apps, preloaded.</p>
+        <p class="font-bold">£25</p>
+      </div>
+
+      <!-- Adapters / Mods -->
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#8E44AD]/50" data-category="mod">
+        <img src="assets/hdmi-adapter.jpg" alt="PS2 HDMI Adapter" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">PS2 HDMI Adapter</h3>
+        <p class="text-[#34E3FF] mb-2">HDMI output for modern TVs.</p>
+        <p class="font-bold">£20</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#8E44AD]/50" data-category="mod">
+        <img src="assets/net-adapter.jpg" alt="Network Adapter" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Network Adapter (IDE/SATA)</h3>
+        <p class="text-[#34E3FF] mb-2">Official or clone adapter for HDD installation.</p>
+        <p class="font-bold">£30 – £40</p>
+      </div>
+
+      <div class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#8E44AD]/50" data-category="mod">
+        <img src="assets/custom-mod.jpg" alt="Custom Mod / Shell Upgrade" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Custom Mod / Shell Upgrade</h3>
+        <p class="text-[#34E3FF] mb-2">LED, fan mods, paintwork or shell swap.</p>
+        <p class="font-bold">From £25</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-[#34E3FF]/30 bg-black/80 py-6 text-center text-white text-sm">
+    © 2025 Retro Man – PlayStation 2 Refurbishment & Resale
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        productCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

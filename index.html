@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Replay - Refurbished Retro Gaming Consoles</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 border-b border-gray-700 bg-gray-900/95 backdrop-blur-sm">
+    <div class="container mx-auto px-4 flex justify-between items-center h-16">
+      <a href="index.html"><img src="assets/RetroReplay_Logo.png" alt="Retro Replay Logo" class="h-12"></a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="flex-1 relative overflow-hidden">
+    <section class="relative min-h-[600px] flex flex-col items-center justify-center">
+      <!-- Background -->
+      <div class="absolute inset-0">
+        <img src="assets/download.jpg" alt="Background" class="w-full h-full object-cover opacity-80">
+      </div>
+
+      <!-- Floating Images -->
+      <div id="floating-images" class="absolute inset-0 z-0"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 text-center px-4">
+        <div class="relative mx-auto mb-8 w-64 h-64">
+          <img src="assets/RetroReplay_Logo.png" alt="Logo" class="logo w-64 h-64 mx-auto animate-pulse relative z-10">
+        </div>
+
+        <p class="hero-text-pink mb-4">Refurbished Retro Gaming Perfection</p>
+        <p class="hero-text-blue mb-8">Relive the Classics. Replay the Memories</p>
+
+        <a href="products.html" class="btn-primary">Consoles</a>
+      </div>
+    </section>
+
+<!-- Why Choose Retro Replay Section -->
+<section class="py-20 bg-gray-900 text-center px-4 relative z-10">
+  <div class="container mx-auto max-w-4xl relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#FA5FDE] mb-6 glow-text animate-pulse">
+      Why Choose Retro Replay?
+    </h2>
+    <p class="text-[#34E3FF] text-lg md:text-xl mb-8">
+      Retro Replay specializes in refurbishing classic gaming consoles from PlayStation, Nintendo, Sega, and more. Each console is meticulously restored, fully cleaned, tested, and verified to deliver authentic retro gaming experiences. We bring your favorite childhood memories back to life with professionally refurbished systems that look and play like new.
+    </p>
+    <a href="about.html" class="btn-primary">Learn More</a>
+  </div>
+
+  <!-- Optional subtle floating shapes -->
+  <img src="assets/floating1.png" class="floating-image top-10 left-5">
+  <img src="assets/floating2.png" class="floating-image top-20 right-10">
+</section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 hero-text-pink">Featured Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="featured-products"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-700 bg-gray-900 mt-auto py-6">
+    <p class="text-center text-white">© 2025 Retro Replay – Refurbished Retro Gaming Consoles</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Featured products
+    const featuredProducts = [
+      {id:'ps2-fat', name:'PS2 Fat Console', price:79.99, image:'assets/ps2-fat.jpg'},
+      {id:'ps2-slim', name:'PS2 Fat Console Bundle', price:89.99, image:'assets/PS2_Fat_Console_Bundle.jpg'},
+      {id:'fmcb-card', name:'FMCB Memory Card', price:29.99, image:'assets/fmcb-card.jpg'}
+    ];
+
+    function renderFeaturedProducts() {
+      const container = document.getElementById('featured-products');
+      container.innerHTML = featuredProducts.map(p => `
+        <div class="product-card bg-gray-800 border border-gray-700 rounded-lg overflow-hidden transition hover:shadow-lg">
+          <div class="product-image relative w-full h-64">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition-transform hover:scale-105">
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="product-title mb-2 hero-text-pink">${p.name}</h3>
+            <p class="product-price text-[#34E3FF]">£${p.price}</p>
+            <button class="btn-primary mt-4">Add to Cart</button>
+          </div>
+        </div>
+      `).join('');
+    }
+    renderFeaturedProducts();
+
+    // Floating images
+    const floatingImagesContainer = document.getElementById('floating-images');
+    const floatingImagesSrc = [
+      'assets/bully.png',
+      'assets/crash.png',
+      'assets/gta_san.png',
+      'assets/spyro.png',
+      'assets/lara.png',
+      'assets/Metal_Gear.png',
+      'assets/tony.png',
+      'assets/fifa_08.png',
+      'assets/final_fants.png',
+      'assets/shadowofthecolossus.png',
+      'assets/simpsons_hit.png'
+    ];
+
+    const floatingImages = [];
+    const heroSection = document.querySelector('section');
+
+    for (let i = 0; i < 25; i++) {
+      const img = document.createElement('img');
+      img.src = floatingImagesSrc[Math.floor(Math.random() * floatingImagesSrc.length)];
+      img.className = 'floating-image';
+      img.style.top = Math.random() * heroSection.offsetHeight + 'px';
+      img.style.left = Math.random() * heroSection.offsetWidth + 'px';
+      floatingImagesContainer.appendChild(img);
+      floatingImages.push({
+        el: img,
+        dx: (Math.random() - 0.5) * 0.8,
+        dy: (Math.random() - 0.5) * 0.8
+      });
+    }
+
+    function animateFloatingImages() {
+      floatingImages.forEach(img => {
+        let top = parseFloat(img.el.style.top);
+        let left = parseFloat(img.el.style.left);
+        if (top + img.dy < 0 || top + img.dy > heroSection.offsetHeight) img.dy *= -1;
+        if (left + img.dx < 0 || left + img.dx > heroSection.offsetWidth) img.dx *= -1;
+        img.el.style.top = top + img.dy + 'px';
+        img.el.style.left = left + img.dx + 'px';
+      });
+      requestAnimationFrame(animateFloatingImages);
+    }
+    animateFloatingImages();
+  </script>
+</body>
+</html>

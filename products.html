@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products - RetroReplay</title>
+
+  <!-- Font & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#07070b] text-white font-[Rubik] relative overflow-hidden">
+
+  <!-- Floating Background Images -->
+  <img src="assets/floating1.png" class="floating-image" style="top:10%; left:5%;">
+  <img src="assets/floating2.png" class="floating-image" style="top:20%; right:8%;">
+  <img src="assets/floating3.png" class="floating-image" style="bottom:15%; left:10%;">
+  <img src="assets/floating4.png" class="floating-image" style="bottom:10%; right:5%;">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-[#34E3FF]/30 bg-black/70 backdrop-blur">
+    <div class="container mx-auto px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/RetroReplay_Logo.png" alt="RetroReplay" class="h-10 w-auto logo-glow">
+        </a>
+        <div class="hidden md:flex gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link active">Products</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="cart-button"><span class="cart-count bg-pink-500 text-white text-xs px-1 rounded">0</span></a>
+          <button class="mobile-menu-button md:hidden">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex-1 py-12 text-center relative z-10">
+    <h1 class="text-4xl font-bold text-[#FA5FDE] mb-3 drop-shadow-[0_0_12px_#FA5FDE]">Retro Consoles</h1>
+    <p class="text-[#34E3FF] mb-12 max-w-2xl mx-auto">
+      Browse our selection of classic gaming systems — choose a console to view all available refurbished units, bundles, and accessories.
+    </p>
+
+    <!-- Console Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+
+      <!-- PS1 -->
+      <a href="ps1.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/ps1.png" alt="PlayStation 1" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">PlayStation 1</h3>
+        <p class="text-[#34E3FF]">Classic Sony console, restored and ready to play.</p>
+      </a>
+
+      <!-- PS2 -->
+      <a href="ps2.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/ps2-fat.jpg" alt="PlayStation 2" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">PlayStation 2</h3>
+        <p class="text-[#34E3FF]">Refurbished PS2 consoles, bundles, and modded units.</p>
+      </a>
+
+
+      <!-- PS3 -->
+      <a href="ps3.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/ps3.png" alt="PlayStation 3" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">PlayStation 3</h3>
+        <p class="text-[#34E3FF]">Classic and Slim PS3 systems, fully tested.</p>
+      </a>
+
+      <!-- Xbox -->
+      <a href="xbox.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/xbox.png" alt="Xbox Original" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Xbox Original</h3>
+        <p class="text-[#34E3FF]">First-generation Microsoft Xbox, refurbished and tested.</p>
+      </a>
+
+      <!-- Xbox 360 -->
+      <a href="xbox360.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/xbox360.png" alt="Xbox 360" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Xbox 360</h3>
+        <p class="text-[#34E3FF]">Slim and Elite Xbox 360 consoles with full testing.</p>
+      </a>
+
+      <!-- Other Retro Consoles -->
+      <a href="retro.html" class="product-card bg-[#0b0b0f]/70 p-6 rounded-xl border border-[#34E3FF]/30 hover:shadow-[0_0_20px_#34E3FF] transition">
+        <img src="assets/retro.png" alt="Other Retro Consoles" class="w-full rounded-lg mb-4">
+        <h3 class="text-[#FA5FDE] text-xl font-bold mb-2">Other Retro Consoles</h3>
+        <p class="text-[#34E3FF]">All remaining retro systems — Sega, Neo Geo, Nintendo, and more.</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#34E3FF]/30 bg-black/80 py-6 text-center text-white text-sm">
+    © 2025 Retro Man – Refurbished Retro Gaming Consoles
+  </footer>
+
+  <script src="navigation.js"></script>
+</body>
+</html>

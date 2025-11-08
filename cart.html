@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Retro Man</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="sticky top-0 z-50 border-b border-gray-700 bg-gray-900/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <a href="index.html" class="text-xl font-bold font-playstation glow-text">RETRO MAN</a>
+                    <div class="hidden md:flex gap-6">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="products.html" class="nav-link">Products</a>
+                        <a href="bundles.html" class="nav-link">Bundles</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="cart.html" class="cart-button">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="mobile-menu-button md:hidden">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="products.html" class="mobile-nav-link">Products</a>
+                <a href="bundles.html" class="mobile-nav-link">Bundles</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="cart.html" class="mobile-nav-link">Cart (<span class="mobile-cart-count">0</span>)</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 py-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 glow-text">Shopping Cart</h1>
+            
+            <div id="empty-cart" class="text-center py-20">
+                <svg class="h-24 w-24 mx-auto text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <p class="text-xl text-gray-400 mb-6">Your cart is empty</p>
+                <a href="products.html" class="btn-primary inline-block">Shop Products</a>
+            </div>
+            
+            <div id="cart-items" class="hidden space-y-4"></div>
+            
+            <div id="cart-summary" class="hidden mt-8 p-6 bg-gray-800 rounded-lg border border-gray-700">
+                <div class="flex justify-between items-center text-xl font-bold mb-4">
+                    <span>Total:</span>
+                    <span class="text-blue-400" id="cart-total">£0.00</span>
+                </div>
+                <button onclick="clearCart()" class="btn-secondary w-full mb-2">Clear Cart</button>
+                <a href="contact.html" class="btn-primary w-full inline-block text-center">Proceed to Checkout</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-700 bg-gray-900 mt-auto">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center text-gray-400">© 2025 Retro Man – PlayStation 2 Refurbishment & Resale</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        function renderCart() {
+            const cart = getCart();
+            const emptyCart = document.getElementById('empty-cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            
+            if (cart.length === 0) {
+                emptyCart.classList.remove('hidden');
+                cartItems.classList.add('hidden');
+                cartSummary.classList.add('hidden');
+                return;
+            }
+            
+            emptyCart.classList.add('hidden');
+            cartItems.classList.remove('hidden');
+            cartSummary.classList.remove('hidden');
+            
+            let total = 0;
+            cartItems.innerHTML = cart.map(item => {
+                total += item.price * item.quantity;
+                return `
+                    <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700">
+                        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded">
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg">${item.name}</h3>
+                            <p class="text-blue-400">£${item.price}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})" class="btn-quantity">-</button>
+                            <span class="w-8 text-center">${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})" class="btn-quantity">+</button>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-red-500 hover:text-red-400">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('cart-total').textContent = '£' + total.toFixed(2);
+        }
+        
+        renderCart();
+    </script>
+</body>
+</html>
